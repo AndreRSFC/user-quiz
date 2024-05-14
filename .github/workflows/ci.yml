@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Node.js 21.12
+      uses: actions/setup-node@v3
+      with:
+        node-version: '21.12'
+        cache: 'npm'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run linter
+      run: npm run lint
+
+    - name: Run tests and collect coverage
+      run: npm run test -- --coverage
+
+    - name: Check test coverage
+      run: |
+        if [ $(npx nyc report --reporter=text-summary | grep 'Lines' | awk '{print $4}' | sed 's/%//') -lt 80 ]; then
+          echo "Test coverage is below 80%, build failed.";
+          exit 1;
+        fi
