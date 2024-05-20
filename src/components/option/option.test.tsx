@@ -10,7 +10,8 @@ describe('Option Component', () => {
     render(
       <Option
         value="option1"
-        selectedOption="option1"
+        selectedOption={{ value: 'option1', isRejection: false }}
+        isRejection={false}
         setSelected={mockSetSelected}
         display="Radio Display"
         type="choice-radio"
@@ -27,7 +28,8 @@ describe('Option Component', () => {
     render(
       <Option
         value="option2"
-        selectedOption=""
+        selectedOption={{ isRejection: false, value: null }}
+        isRejection={false}
         setSelected={mockSetSelected}
         display={htmlContent}
         type="checkbox"
@@ -43,8 +45,9 @@ describe('Option Component', () => {
     render(
       <Option
         value="option2"
-        selectedOption="option2"
+        selectedOption={{ value: 'option2', isRejection: false }}
         setSelected={mockSetSelected}
+        isRejection={false}
         display={htmlContent}
         type="checkbox"
         displayIsHtmlElement={true}
@@ -61,10 +64,11 @@ describe('Option Component', () => {
     render(
       <Option
         value="option1"
-        selectedOption=""
+        selectedOption={{ isRejection: false, value: null }}
         setSelected={mockSetSelected}
         display="Click Test"
         type="radio"
+        isRejection={false}
         displayIsHtmlElement={false}
       />,
     );
@@ -72,6 +76,9 @@ describe('Option Component', () => {
     const radioElement = screen.getByLabelText('Click Test');
     await userEvent.click(radioElement);
 
-    await expect(mockSetSelected).toHaveBeenCalledWith('option1');
+    await expect(mockSetSelected).toHaveBeenCalledWith({
+      isRejection: false,
+      value: 'option1',
+    });
   });
 });
