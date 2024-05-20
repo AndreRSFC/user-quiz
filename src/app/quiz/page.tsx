@@ -11,6 +11,7 @@ import { useQuizData } from './quiz.service';
 import { useSearchParams } from 'next/navigation';
 import { useQuizStore } from '@/store/quiz-data.store';
 import { SelectedOptionModel } from './quiz.models';
+import { Button } from '@/components/button/button.component';
 
 const Quiz = () => {
   const { data } = useQuizData();
@@ -70,9 +71,8 @@ const Quiz = () => {
           )}
         </div>
 
-        <button
-          disabled={!selectedOption}
-          className={styles.quiz_continueButton}
+        <Button
+          disabled={selectedOption.value === null}
           onClick={() => {
             goForward(
               data?.questions?.length - 1,
@@ -83,7 +83,7 @@ const Quiz = () => {
           }}
         >
           Continue
-        </button>
+        </Button>
       </div>
     </div>
   );

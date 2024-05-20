@@ -2,6 +2,7 @@ import { SelectedOptionModel } from '@/app/quiz/quiz.models';
 import { Radio } from '../radio';
 
 import styles from './option.module.css';
+import React, { useMemo } from 'react';
 
 interface OptionProps {
   value: string;
@@ -22,6 +23,16 @@ export const Option = ({
   displayIsHtmlElement,
   isRejection,
 }: OptionProps) => {
+  const ImageComponent = useMemo(
+    () => (
+      <div
+        className={styles.option_image}
+        dangerouslySetInnerHTML={{ __html: display }}
+      />
+    ),
+    [display],
+  );
+
   return (
     <div
       key={value + ''}
@@ -35,11 +46,7 @@ export const Option = ({
           className={`${styles.option_imageContainer} ${value === selectedOption?.value ? styles['option_imageContainer--checked'] : ''}`}
           data-testid="option-image-container"
         >
-          <div
-            key={display}
-            className={styles.option_image}
-            dangerouslySetInnerHTML={{ __html: display }}
-          />
+          {ImageComponent}
           {value}
         </div>
       ) : (

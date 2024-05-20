@@ -24,7 +24,7 @@ export const Radio = ({
       id={id}
       name={name}
       value={value}
-      defaultChecked={checked}
+      checked={checked}
       onSelect={onSelect}
     />
     <span className={styles.checkmark}></span>
