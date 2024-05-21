@@ -1,0 +1,36 @@
+.notFound {
+  max-width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 100px auto 100px;
+}
+
+.notFound_title {
+  font-weight: 600;
+  font-size: 50px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  color: var(--primary);
+  margin-bottom: 24px;
+  text-align: center;
+  margin: 12px 0 0;
+  line-height: 60px;
+}
+
+.notFound_text {
+  color: var(--primary);
+  font-size: 16px;
+  line-height: 28px;
+  margin: 12px 0 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.notFound_buttons {
+  width: 100%;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
