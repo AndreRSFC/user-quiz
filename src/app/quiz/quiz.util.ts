@@ -6,7 +6,7 @@ export const isHtmlElement = (str: string) => {
   return regex.test(str);
 };
 
-const useStepNavigation = () => {
+export const useStepNavigation = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const questionStep = searchParams?.get('questionStep') || '0';
@@ -36,5 +36,3 @@ const useStepNavigation = () => {
 
   return { goBack, goForward };
 };
-
-export default useStepNavigation;

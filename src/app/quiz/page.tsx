@@ -2,7 +2,7 @@
 import { Suspense, useEffect, useMemo, useState } from 'react';
 import styles from './quiz.module.css';
 import { Option } from '@/components/option';
-import useStepNavigation, { isHtmlElement } from './quiz.util';
+import { isHtmlElement, useStepNavigation } from './quiz.util';
 import { useQuizData } from './quiz.service';
 import { useSearchParams } from 'next/navigation';
 import { useQuizStore } from '@/store/quiz-data.store';

@@ -6,6 +6,6 @@ export const REJECTION_DATA = {
 
 export const SUCCESS_DATA = {
   title: 'You are eligible',
-  text: ' Great news! We have the perfect treatment for your hair loss. Proceed to www.manual.co, and prepare to say hello to your new hair!',
+  text: 'Great news! We have the perfect treatment for your hair loss. Proceed to www.manual.co, and prepare to say hello to your new hair!',
   button: 'Go to Manual',
 };

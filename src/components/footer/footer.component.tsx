@@ -33,7 +33,10 @@ export const Footer = () => {
         </div>
       </div>
       <hr className={styles.footer_separator} />
-      <span className={styles.footer_copyrightText}>
+      <span
+        className={styles.footer_copyrightText}
+        data-testid="footer_copyrightText"
+      >
         © {currentlyYear} Manual. All rights reserverd
       </span>
     </footer>
