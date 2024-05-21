@@ -6,7 +6,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  margin-top: 24px;
   font-weight: 600;
   font-size: 16px;
   cursor: pointer;
@@ -35,8 +34,8 @@
 }
 
 .button_secondary:hover {
-  border: 2px solid #0b3b3c01;
-  color: #0b3b3c01;
+  border: 2px solid #0b3b3c80;
+  color: #0b3b3c80;
 }
 
 .button_primary:disabled {

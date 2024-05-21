@@ -3,8 +3,11 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Manual',
+  title: 'Manual: Men´s health care made easy',
   description: 'Manual.co',
+  icons: {
+    icon: '/favicon.ico?v=1',
+  },
 };
 
 export default function RootLayout({

@@ -21,15 +21,11 @@ const useStepNavigation = () => {
   };
 
   const goForward = (lastStep: number, isRejection: boolean) => {
-    if (isRejection) {
-      router.push('/results');
-      return;
-    }
-
     const currentStep = parseInt(questionStep);
 
-    if (currentStep === lastStep) {
-      router.push('/results');
+    if (isRejection) {
+      router.push(`/quiz/?questionStep=${currentStep}`);
+      return;
     } else {
       router.push(`/quiz/?questionStep=${currentStep + 1}`);
     }
