@@ -17,7 +17,7 @@ export const Button = ({ children, styleType, ...props }: ButtonProps) => {
       className={`${ttNorms.className} ${styles.button} ${styles[styleType || 'button_primary']}`}
       {...props}
     >
-      <span>{children}</span>
+      {children}
     </button>
   );
 };

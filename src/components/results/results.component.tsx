@@ -23,7 +23,7 @@ export const Results = ({ isRejection, setIsRejectionFalse }: ResultsProps) => {
         loading="lazy"
         width={64}
         height={64}
-        alt="doctor image"
+        alt="Image of a doctor with a green background"
       />
       <div className={styles.results_textContainer}>
         <h1 className={styles.results_title}>{title}</h1>
