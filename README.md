@@ -140,3 +140,9 @@ For those interested in the specifics of our CI/CD setup or who may need to modi
     - Host documentation on a dedicated webpage.
 - Custom Hooks
     - Abstract common logic into reusable hooks.
+- Typography Component
+    - Create a common component for all typography
+- Tratement for directly access on step
+    - Create a treatment for direct access in a final step without having answered the previous ones
+- CSS variables
+    - Create more CSS variables for radios, margin, font-size, etc
