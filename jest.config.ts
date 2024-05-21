@@ -3,6 +3,7 @@ import nextJest from 'next/jest';
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   testEnvironment: 'jest-environment-jsdom',
+  modulePathIgnorePatterns: ['<rootDir>/e2e'],
 };
 
 const createJestConfig = nextJest({
