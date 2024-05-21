@@ -50,3 +50,17 @@
 .option_image img {
   max-width: 110px;
 }
+
+@media (max-width: 344px) {
+  .option_imageContainer {
+    font-size: 12px;
+  }
+
+  .option_image {
+    padding: 8px;
+  }
+
+  .option_image img {
+    max-width: 85px;
+  }
+}
