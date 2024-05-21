@@ -21,16 +21,19 @@
   font-size: 28px;
   line-height: 36px;
   letter-spacing: -1px;
-  color: rgb(11, 59, 60);
+  color: var(--primary);
   margin-bottom: 24px;
   text-align: center;
+}
+
+.quiz_optionsContainer {
+  margin-bottom: 24px;
 }
 
 .quiz_options {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 12px;
-  margin-bottom: 24px;
 }
 
 @media (max-width: 1024px) {

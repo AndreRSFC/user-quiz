@@ -3,7 +3,7 @@
   max-width: 528px;
   box-sizing: border-box;
   margin: 0px auto;
-  color: #0b3b3c;
+  color: var(--primary);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -20,7 +20,7 @@
   font-size: 28px;
   line-height: 36px;
   letter-spacing: -1px;
-  color: rgb(11, 59, 60);
+  color: var(--primary);
   text-align: center;
   margin-bottom: 8px;
 }
@@ -30,7 +30,7 @@
   font-size: 16px;
   line-height: 28px;
   margin: 0px;
-  color: rgb(11, 59, 60);
+  color: var(--primary);
   text-align: center;
 }
 
@@ -38,8 +38,10 @@
   align-items: center;
   cursor: pointer;
   text-decoration: underline;
-  color: rgb(11, 59, 60);
+  color: var(--primary);
   margin-top: 24px;
+  border: 0;
+  background-color: transparent;
 }
 
 .results_link:hover {

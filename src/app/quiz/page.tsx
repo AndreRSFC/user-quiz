@@ -56,7 +56,9 @@ const Quiz = () => {
       ) : (
         <div className={styles.quiz_content}>
           <h1 className={styles.quiz_title}>{question}</h1>
-          <div className={`${displayIsHtmlElement ? styles.quiz_options : ''}`}>
+          <div
+            className={`${styles.quiz_optionsContainer} ${displayIsHtmlElement ? styles.quiz_options : ''}`}
+          >
             {options.map(
               (option: {
                 value: string;

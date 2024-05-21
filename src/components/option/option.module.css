@@ -33,7 +33,7 @@
 }
 
 .option:has(input:checked, .option_imageContainer--checked) {
-  outline: rgb(11, 59, 60) solid 2px;
+  outline: var(--primary) solid 2px;
 }
 
 .option_imageContainer {
@@ -44,7 +44,7 @@
   font-size: 14px;
   line-height: 24px;
   font-weight: 600;
-  color: #0b3b3c;
+  color: var(--primary);
 }
 
 .option_image img {
