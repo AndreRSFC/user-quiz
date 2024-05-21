@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import styles from './quiz.module.css';
 import { Option } from '@/components/option';
 import useStepNavigation, { isHtmlElement } from './quiz.util';
@@ -99,4 +99,12 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+const SuspensedQuiz = () => {
+  return (
+    <Suspense>
+      <Quiz />
+    </Suspense>
+  );
+};
+
+export default SuspensedQuiz;
