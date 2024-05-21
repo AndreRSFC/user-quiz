@@ -8,7 +8,11 @@ interface QuizHeader {
 export const QuizHeader = ({ goBack }: QuizHeader) => {
   return (
     <nav className={styles.header}>
-      <button className={styles.header_back} onClick={goBack}>
+      <button
+        className={styles.header_back}
+        onClick={goBack}
+        aria-label="Go to previous page"
+      >
         <Back />
       </button>
     </nav>

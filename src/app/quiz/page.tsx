@@ -70,7 +70,7 @@ const Quiz = () => {
                   setSelected={setSelectedOption}
                   value={option.value}
                   display={option.display}
-                  key={option.value + ''}
+                  key={option.value + question}
                   isRejection={option.isRejection}
                   type={type}
                   displayIsHtmlElement={displayIsHtmlElement}
@@ -87,7 +87,11 @@ const Quiz = () => {
                 data?.questions?.length - 1,
                 !!selectedOption?.isRejection,
               );
-              if (selectedOption && selectedOption.value)
+              if (
+                selectedOption &&
+                selectedOption.value &&
+                !selectedOption?.isRejection
+              )
                 updateQuestions(questionStep + '', selectedOption.value);
             }}
           >
