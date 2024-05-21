@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
 import styles from './quiz.module.css';
 import { Option } from '@/components/option';
 import useStepNavigation, { isHtmlElement } from './quiz.util';
@@ -56,7 +56,9 @@ const Quiz = () => {
       ) : (
         <div className={styles.quiz_content}>
           <h1 className={styles.quiz_title}>{question}</h1>
-          <div className={`${displayIsHtmlElement ? styles.quiz_options : ''}`}>
+          <div
+            className={`${styles.quiz_optionsContainer} ${displayIsHtmlElement ? styles.quiz_options : ''}`}
+          >
             {options.map(
               (option: {
                 value: string;
@@ -97,4 +99,12 @@ const Quiz = () => {
   );
 };
 
-export default Quiz;
+const SuspensedQuiz = () => {
+  return (
+    <Suspense>
+      <Quiz />
+    </Suspense>
+  );
+};
+
+export default SuspensedQuiz;

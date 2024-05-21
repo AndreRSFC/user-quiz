@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import styles from './results.module.css';
 import { Button } from '../button';
-import Link from 'next/link';
 import { ButtonType } from '../button/button.constants';
 import { getResultsContent } from './results.util';
 import { useRouter } from 'next/navigation';
+import { useQuizStore } from '@/store/quiz-data.store';
 
 interface ResultsProps {
   isRejection?: boolean;
@@ -12,6 +12,7 @@ interface ResultsProps {
 }
 
 export const Results = ({ isRejection, setIsRejectionFalse }: ResultsProps) => {
+  const clearQuestions = useQuizStore((state) => state.clearQuestions);
   const { title, text, button } = getResultsContent(!!isRejection);
   const router = useRouter();
 
@@ -40,9 +41,15 @@ export const Results = ({ isRejection, setIsRejectionFalse }: ResultsProps) => {
       >
         {button}
       </Button>
-      <Link className={styles.results_link} href="/">
+      <button
+        className={styles.results_link}
+        onClick={async () => {
+          await clearQuestions();
+          router.push('/');
+        }}
+      >
         Back to homepage
-      </Link>
+      </button>
     </div>
   );
 };

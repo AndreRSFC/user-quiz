@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { ButtonType } from './button.constants';
 import { ttNorms } from '@/fonts';
 import styles from './button.module.css';
+import '../../app/globals.css';
 
 interface ButtonProps {
   children: ReactNode;
