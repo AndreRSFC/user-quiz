@@ -20,12 +20,14 @@ export const Radio = ({
   <label className={styles.container}>
     {display}
     <input
+      key={`${value}${name}${display}`}
       type="radio"
       id={id}
       name={name}
       value={value}
       checked={checked}
       onSelect={onSelect}
+      readOnly
     />
     <span className={styles.checkmark}></span>
   </label>
