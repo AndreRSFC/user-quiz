@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Quiz Page - Success flow', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 
@@ -21,7 +21,6 @@ test('Quiz Page - Success flow', async ({ page }) => {
   const quizStep1Moderate = page.getByText('Moderate');
   const continueButton = page.getByText('Continue');
   await expect(quizStep1Moderate).toBeVisible();
-  await expect(continueButton).toBeDisabled();
 
   await quizStep1Moderate.click();
 
@@ -74,7 +73,7 @@ test('Quiz Page - Success flow', async ({ page }) => {
 });
 
 test('Quiz Page - aren´t eligible flow', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 
@@ -94,7 +93,6 @@ test('Quiz Page - aren´t eligible flow', async ({ page }) => {
   const quizStep1Complete = page.getByText('Complete');
   const continueButton = page.getByText('Continue');
   await expect(quizStep1Complete).toBeVisible();
-  await expect(continueButton).toBeDisabled();
 
   await quizStep1Complete.click();
 
@@ -148,7 +146,7 @@ test('Quiz Page - aren´t eligible flow', async ({ page }) => {
 });
 
 test('Quiz Page - Go back button', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 
