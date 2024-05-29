@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Home Page - Checking page content', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 
@@ -38,7 +38,7 @@ test('Home Page - Checking page content', async ({ page }) => {
 });
 
 test('Home Page - Checking quiz navigation', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 
@@ -57,7 +57,7 @@ test('Home Page - Checking quiz navigation', async ({ page }) => {
 });
 
 test('Home Page - Checking footer navigation', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 

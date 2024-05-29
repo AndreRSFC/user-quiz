@@ -50,16 +50,18 @@ export const Option = ({
           {value}
         </div>
       ) : (
-        <Radio
-          name={type}
-          value={value}
-          id={display}
-          onSelect={() => {
-            setSelected({ value, isRejection });
-          }}
-          checked={value === selectedOption?.value}
-          display={display}
-        />
+        <>
+          <Radio
+            name={type}
+            value={value}
+            id={display}
+            onSelect={() => {
+              setSelected({ value, isRejection });
+            }}
+            checked={value === selectedOption?.value}
+            display={display}
+          />
+        </>
       )}
     </div>
   );
