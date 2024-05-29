@@ -32,11 +32,16 @@ const Quiz = () => {
   );
 
   useEffect(() => {
-    if (questions?.[questionStep]) {
+    if (
+      questions?.[questionStep] !== null ||
+      questions?.[questionStep] !== undefined
+    ) {
       setSelectedOption({
         value: questions?.[questionStep],
         isRejection: false,
       });
+    } else {
+      setSelectedOption({ value: null, isRejection: false });
     }
   }, [questionStep, questions]);
 
@@ -87,12 +92,17 @@ const Quiz = () => {
                 data?.questions?.length - 1,
                 !!selectedOption?.isRejection,
               );
+
               if (
-                selectedOption &&
-                selectedOption.value &&
+                selectedOption?.value !== null &&
                 !selectedOption?.isRejection
-              )
+              ) {
                 updateQuestions(questionStep + '', selectedOption.value);
+              }
+              setSelectedOption({
+                value: null,
+                isRejection: false,
+              });
             }}
           >
             Continue

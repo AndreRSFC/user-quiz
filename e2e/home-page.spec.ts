@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Home Page - Checking page content', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 
@@ -12,14 +12,16 @@ test('Home Page - Checking page content', async ({ page }) => {
   await expect(pageQuiz).toBeVisible();
 
   const pageSections = page.getByText('What we can help with');
-  await expect(pageSections).not.toBeInViewport();
-
-  await pageSections.scrollIntoViewIfNeeded();
   await expect(pageSections).toBeInViewport();
 
   const pageFirstSection = page.getByText(
     'Hair loss needn’t be irreversible. We can help!',
   );
+
+  await expect(pageFirstSection).not.toBeInViewport();
+
+  await pageFirstSection.scrollIntoViewIfNeeded();
+
   await expect(pageFirstSection).toBeInViewport();
 
   const pageSecondSection = page.getByText(
@@ -38,7 +40,7 @@ test('Home Page - Checking page content', async ({ page }) => {
 });
 
 test('Home Page - Checking quiz navigation', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 
@@ -57,7 +59,7 @@ test('Home Page - Checking quiz navigation', async ({ page }) => {
 });
 
 test('Home Page - Checking footer navigation', async ({ page }) => {
-  await page.goto('https://user-quiz-hazel.vercel.app/');
+  await page.goto('/');
 
   await expect(page).toHaveTitle(/Manual: Men´s health care made easy/);
 
@@ -72,6 +74,6 @@ test('Home Page - Checking footer navigation', async ({ page }) => {
 
   await footerCustomerServiceLink.click();
 
-  const notFoundPage = page.getByText('This page could not be found.');
+  const notFoundPage = page.getByText('Something has gone wrong');
   await expect(notFoundPage).toBeVisible();
 });
